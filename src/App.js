@@ -5,6 +5,7 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 import Home from './containers/Home';
 import Nav from './components/Nav';
 import Recording from './containers/Recording';
+import Cam from './components/Cam'
 
 
 export default class App extends Component {
@@ -16,7 +17,7 @@ export default class App extends Component {
         <Route path='/' component={Nav} />
           <Switch>
             <Route path='/' exact component={Home} />
-            <Route path='/record' exact component={Recording} />
+            <Route path='/record' exact component={Cam} />
           </Switch>
       </HashRouter>
     )
