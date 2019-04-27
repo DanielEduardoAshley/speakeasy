@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 
-
+import Navbar from './components/navbar';
 import Home from './containers/home';
 
 
@@ -17,8 +17,9 @@ class App extends React.Component {
     render() {
       return(
       <HashRouter> 
+        <Route path='/*' component={ Navbar }/>
         <Route path='/' exact component={Home} />
-        
+
        </HashRouter> 
       );
     };
