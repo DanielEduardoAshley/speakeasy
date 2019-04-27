@@ -5,6 +5,7 @@ import Navbar from './components/navbar';
 import Home from './containers/home';
 import Info from './components/info';
 import Record from './containers/record';
+import Dialog from './components/dialog';
 
 
 class App extends React.Component {
@@ -20,7 +21,7 @@ class App extends React.Component {
       <HashRouter> 
         <Route path='/*' component= {Navbar}/>
         <Switch>
-          
+
         <Route path='/' exact component= {Home} />
         <Route path='/info' exact component= {Info}/> 
         <Route path ='/record' exact component ={Record}/>
