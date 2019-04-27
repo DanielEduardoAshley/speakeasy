@@ -8,7 +8,21 @@ class Home extends React.Component {
 
     render(){
         return(
-            <h1>YOOOOO</h1>
+        <div style={{textAlign:'center'}}>
+        
+        <div className="jumbotron jumbotron-fluid">
+          <div className="container">
+            <h1 className="display-4"> Public Speaking Training</h1>
+            <h2 className="lead">Facial Recognition Technology </h2>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+ 
         );
     }
 }

@@ -4,6 +4,8 @@ import { HashRouter, Route } from 'react-router-dom';
 
 import Home from './containers/home';
 
+
+
 class App extends React.Component {
     constructor(props){
       super(props);
@@ -11,10 +13,12 @@ class App extends React.Component {
     }
 
 
+
     render() {
       return(
       <HashRouter> 
         <Route path='/' exact component={Home} />
+        
        </HashRouter> 
       );
     };
