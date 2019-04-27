@@ -1,13 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Link} from 'react-router-dom';
 
-function App() {
-  return (
-    <div>
-      Hello World
-    </div>
-  );
+class App extends React.Component {
+    constructor(props){
+      super(props);
+
+    }
+
+
+    render() {
+      return(
+    
+    <h1>HELLO SON</h1>
+      );
+    };
 }
-
 export default App;
