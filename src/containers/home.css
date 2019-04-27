@@ -1,11 +1,12 @@
 .jumbotron-fluid{
-    background-color: black;  
+    background-color: mediumaquamarine;  
 }
 
 .container {
     position: relative;
     width: auto;
     margin-bottom: 30px;
+    margin-top: 30px;
   }
 
 .backgroung{
@@ -28,7 +29,7 @@
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: black;  
+    background-color: white;  
   }
 
 

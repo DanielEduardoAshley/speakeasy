@@ -20,16 +20,15 @@ class Home extends React.Component {
         
         <div className="jumbotron jumbotron-fluid">
           <div className="container">
-            <h1 className="display-4"> ssss</h1>
-            <h2 className="lead"> sssss </h2>
+            <h1 className="display-4"> Facial Recognition </h1>
+            <h1 className="display-5"> Practice your public speaking </h1>
           </div>
         </div>
       </div>
  
 <div className="container">
-            <img src={require('../assets/fbifaces.jpg')} className="img-fluid" alt=""/>
-            <div className="overlay">
-
+            <img style={{width:'300%', height:'300%'}} src={require('../assets/facial4.jpg')} className="img-fluid" alt=""/>
+            <div className="overlay"> 
                 <div onClick className="background">
                     <Link className="text" to='/record'> Record  </Link>
                 </div>
