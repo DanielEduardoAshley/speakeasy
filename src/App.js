@@ -1,5 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
+
+
+import Home from './containers/home';
 
 class App extends React.Component {
     constructor(props){
@@ -10,8 +13,9 @@ class App extends React.Component {
 
     render() {
       return(
-    
-    <h1>HELLO SON</h1>
+      <HashRouter> 
+        <Route path='/' exact component={Home} />
+       </HashRouter> 
       );
     };
 }
