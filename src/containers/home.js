@@ -1,5 +1,7 @@
 import React from 'react';
-import Info from '../components/info';
+import {Link} from 'react-router-dom';
+import './home.css'
+
 
 class Home extends React.Component {
     constructor(props){
@@ -9,6 +11,8 @@ class Home extends React.Component {
 
     render(){
         return(
+            <>
+
         <div style={{textAlign:'center'}}>
         
         <div className="jumbotron jumbotron-fluid">
@@ -20,10 +24,16 @@ class Home extends React.Component {
       </div>
 
 
+{/* <div className="container">
+            <img src={require('../assets/facial1.jpg')} className="img-fluid" alt=" "/>
+            <div className="overlay">
 
-
- 
- 
+                <div onClick className="background">
+                    <Link className="text" to='/info'> fff </Link>
+                </div>
+            </div>
+        </div> */}
+   </>
         );
     }
 }
