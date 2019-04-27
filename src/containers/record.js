@@ -9,7 +9,10 @@ class Record extends React.Component{
 
     render(){
         return(
+            <>
             <h1> Press Record </h1>
+    
+</>
         );
     };
 };

@@ -16,7 +16,7 @@ const Navbar = (props) => {
             <Link className="nav-link" to='/'> Home <span className="sr-only">(current)</span></Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/info">Record</Link>
+            <Link className="nav-link" to="/record">Record</Link>
           </li>
           {/* will use below if implementing login feature */}
           {/* <li class="nav-item">
