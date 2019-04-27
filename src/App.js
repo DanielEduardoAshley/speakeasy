@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div>
-      Hello World
-    </div>
-  );
+//components
+import Home from './containers/Home';
+import Nav from './components/Nav';
+
+
+export default class App extends Component {
+
+
+  render() {
+    return (
+      <HashRouter>
+        <Route path='/' component={Nav} />
+        <Route path='/' component={Home} />
+      </HashRouter>
+    )
+  }
 }
-
-export default App;
