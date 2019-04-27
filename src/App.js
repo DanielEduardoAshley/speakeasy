@@ -4,7 +4,6 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 //components
 import Home from './containers/Home';
 import Nav from './components/Nav';
-import Recording from './containers/Recording';
 import Cam from './components/Cam'
 
 

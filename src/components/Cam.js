@@ -42,7 +42,7 @@ class Cam extends React.Component {
           <button type="button" className="btn btn-success" style={{borderRadius: '90%'}}>Start</button><button type="button" className="btn btn-danger">Stop</button>
         </div>
         <div className="mb-3" >
-          <button type="button" className="btn btn-warning" style={{float: 'right'}}>Send Report</button>
+          <button type="button" className="btn btn-warning" style={{float: 'right'}}>Get Your Report!</button>
         </div>
       </div>
       </>
@@ -51,14 +51,3 @@ class Cam extends React.Component {
 }
 
 export default Cam;
-
-// <Webcam
-// style={{ marginLeft: '5px' }}
-// audio={false}
-// height={350}
-// ref={this.setRef}
-// screenshotFormat="image/jpeg"
-// width={350}
-// videoConstraints={videoConstraints}
-// />
-// <button onClick={this.capture}>Capture photo</button>
