@@ -1,3 +1,7 @@
+.jumbotron-fluid{
+    background-color: black;  
+}
+
 .container {
     position: relative;
     width: auto;
