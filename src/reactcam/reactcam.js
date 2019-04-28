@@ -80,12 +80,21 @@ class Cam extends React.Component {
        
         try {
           const snapshot = await newImage.putString(imageSrc.slice(23), 'base64');
-          console.log(snapshot)
+          // console.log(snapshot)
           const url = await snapshot.ref.getDownloadURL();
           console.log(url)
           axios.get(`http://api.skybiometry.com/fc/faces/detect.json?api_key=ku4qbnvd7f4vbg7cp7qpoagvgn&api_secret=403ke03ck53s4ai0cn2971jgar	&urls=${url}&attributes=all`)
           .then((response)=>{
-            console.log(response)
+            console.log(response.data.photos[0].tags[0].attributes)
+            const attributes = response.data.photos[0].tags[0].attributes
+            const obj = {}
+            obj.snapTime = snapTime / 1000
+            obj.attributes = attributes
+            this.setState({
+              apiData : (this.state.apiData || []).concat(obj)
+            },()=>{
+              console.log(this.state)
+            })
           })
         }
         catch(err) {
@@ -102,6 +111,8 @@ record=()=>{
   const startTime = Date.now()
   this.setState({
     startTime 
+  },()=>{
+    console.log(this.state)
   })
   const recording = !this.state.recording
   let apiCall = null
