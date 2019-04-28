@@ -16,7 +16,7 @@ const Nav = (props) => {
           <li className="nav-item">
             <a className="nav-link" href="#/record">Record</a>
           </li>
-          {/* will use below if implementing login feature */}
+          {/* will use below <li> if implementing login feature */}
           {/* <li className="nav-item">
             <a className="nav-link" href="#">Log In</a> 
           </li> */}

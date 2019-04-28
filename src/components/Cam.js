@@ -1,5 +1,6 @@
 import React from 'react';
 import Webcam from 'react-webcam';
+import {Link} from 'react-router-dom';
 // import { setFlagsFromString } from 'v8';
 
 class Cam extends React.Component {
@@ -61,11 +62,10 @@ class Cam extends React.Component {
           <button onClick={this.handleStart} type="button" className="btn btn-success" style={{ borderRadius: '95%' }}>Start</button><button onClick={this.handleStop} type="button" className="btn btn-danger" style={{ borderRadius: '2%' }}>Stop</button>
         </div>
         <div className="mb-3" >
-          <button href='#/results' type="button" className="btn btn-warning" style={{ float: 'right' }}>Get Your Report!</button>
+          <Link to='/results'><button type="button" className="btn btn-warning" style={{ float: 'right' }}>Get Your Report!</button></Link>
         </div>
       </div>
-    )
-          
+    )    
   }
 }
 

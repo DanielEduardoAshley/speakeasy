@@ -4,8 +4,9 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "mdbootstrap": "^4.7.7",
+    "chart.js": "^2.8.0",
     "react": "^16.8.6",
+    "react-chartjs-2": "^2.7.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
