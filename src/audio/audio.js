@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import SpeechRecognition from "react-speech-recognition";
 import axios from 'axios';
-var request = require('request');
 
 
 const propTypes = {

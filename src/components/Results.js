@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Line, Doughnut } from 'react-chartjs-2';
+import ApiContext from '../contexts/apiContext'
 
 export default class Report extends Component {
 
@@ -12,7 +13,12 @@ export default class Report extends Component {
       data: [10, 1, 5, 2, 20,],
       }]
   }
-  
+
+  componentDidMount(){
+    const dataString =localStorage.getItem('reportData')
+    const Data = JSON.parse(dataString)
+    console.log('Data',Data)
+  }
     function () {
       ('.min-chart#chart-sales').easyPieChart({
         barColor: "#4caf50",
@@ -24,7 +30,7 @@ export default class Report extends Component {
 
 
   render() {
-
+console.log(this.context)
     return (
       <>
         <div className="text-center">

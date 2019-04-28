@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 
 class Info extends React.Component {
@@ -34,7 +33,7 @@ class Info extends React.Component {
                You’re familiar with their facial features — their eyes, nose, mouth — and how they come together.
                </p>
 
-               <p>
+               <div>
                That’s how a facial recognition system works, but on a grand, algorithmic scale. 
                Where you see a face, recognition technology sees data. That data can be stored and accessed. For instance, half of all American adults have their images stored in one or more facial-recognition databases that law enforcement agencies can search, according to a Georgetown University study.
                So how does facial recognition work? Technologies vary, but here are the basic steps:
@@ -53,7 +52,7 @@ Step 3. Your facial signature — a mathematical formula — is compared to a da
 Step 4. A determination is made. Your faceprint may match that of an image in a facial recognition system database.
 </li>
 </ul>
-               </p>
+               </div>
             </>
 
         );
