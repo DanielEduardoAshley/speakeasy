@@ -2,10 +2,13 @@ import React from "react";
 import * as firebase from 'firebase';
 import axios from 'axios';
 import Webcam from "react-webcam";
+import getUrl from "../services/getUrl";
 import Dictophone from '../audio/audio';
+import { HashRouter } from 'react-router-dom';
 import ApiContext from '../contexts/apiContext';
 // const DeepAffects = require('deep-affects');
 
+const MicRecorder = require('mic-recorder-to-mp3');
 // const defaultClient = DeepAffects.ApiClient.instance;
 // const UserSecurity = defaultClient.authentications['UserSecurity'];
 // UserSecurity.apiKey = 'h6plWgFrmhO4GRgbZrGcJviqgzFVLrTR';
@@ -16,11 +19,14 @@ import ApiContext from '../contexts/apiContext';
 
 
 // New instance
-
+const recorder = new MicRecorder({
+ bitRate: 128
+});
 
 const skybiometry = require('skybiometry');
 const client = new skybiometry.Client('ku4qbnvd7f4vbg7cp7qpoagvgn', '403ke03ck53s4ai0cn2971jgar');
-
+const base64Img = require('base64-img');
+var base64ToImage = require('base64-to-image');
 
 
 
@@ -81,22 +87,27 @@ class Cam extends React.Component {
           console.log(url)
           axios.get(`http://api.skybiometry.com/fc/faces/detect.json?api_key=ku4qbnvd7f4vbg7cp7qpoagvgn&api_secret=403ke03ck53s4ai0cn2971jgar	&urls=${url}&attributes=all`)
           .then((response)=>{
-            if(response.data.photos[0].tags[0].attributes){
+            if(!response.data.photos[0].tags[0]){
+              console.log(response.data.photos[0].tags[0])
+            }
+            else {
+
               console.log(response.data.photos[0].tags[0].attributes)
-            
-            const attributes = response.data.photos[0].tags[0].attributes
-            const obj = {}
-            obj.snapTime = snapTime / 1000
-            obj.attributes = attributes
-            this.setState({
-              apiData : (this.state.apiData || []).concat(obj)
-            },()=>{
-              console.log(this.state)
+              const attributes = response.data.photos[0].tags[0].attributes
+              const obj = {}
+              obj.snapTime = snapTime / 1000
+              obj.attributes = attributes
+              this.setState({
+                apiData : (this.state.apiData || []).concat(obj)
+              },()=>{
+                console.log(this.state)
+              })
+            }
             })
-          }
-          })    
+
+            
+            
         }
-        
         catch(err) {
           console.log(err);
         }
@@ -126,6 +137,7 @@ record=()=>{
 
        
 
+        const snapTime = Date.now()
         this.setState({recording})
         }, 15000)
       })

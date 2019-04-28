@@ -1,0 +1,63 @@
+.jumbotron-fluid{
+    background-color: mediumaquamarine;  
+}
+
+.container {
+    position: relative;
+    width: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+.backgroung{
+    filter: alpha(30);
+  }
+
+  .img-fluid{
+    width: 100%;
+    margin-bottom: 30px;
+    height: 100%;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: white;  
+  }
+
+
+  .container:hover .overlay {
+    opacity: 1;
+  }
+
+  a:hover{
+    text-decoration: none; 
+  }
+
+
+
+.UsersNHome{
+    margin-left: 0px;
+    margin-right: 0px;
+    justify-content: space-around;
+}
+
+
+  .text {
+    color: red;
+    font-size: 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
