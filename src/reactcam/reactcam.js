@@ -3,7 +3,23 @@ import * as firebase from 'firebase';
 import axios from 'axios';
 import Webcam from "react-webcam";
 import getUrl from "../services/getUrl";
+import Dictophone from '../audio/audio'
+// const DeepAffects = require('deep-affects');
 
+const MicRecorder = require('mic-recorder-to-mp3');
+// const defaultClient = DeepAffects.ApiClient.instance;
+// const UserSecurity = defaultClient.authentications['UserSecurity'];
+// UserSecurity.apiKey = 'h6plWgFrmhO4GRgbZrGcJviqgzFVLrTR';
+// // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+// UserSecurity.apiKeyPrefix = 'Token';
+
+// const apiInstance = new DeepAffects.EmotionApi();
+
+
+// New instance
+const recorder = new MicRecorder({
+ bitRate: 128
+});
 
 const skybiometry = require('skybiometry');
 const client = new skybiometry.Client('ku4qbnvd7f4vbg7cp7qpoagvgn', '403ke03ck53s4ai0cn2971jgar');
@@ -80,6 +96,12 @@ class Cam extends React.Component {
     
 
 record=()=>{
+  recorder.start().then(() => {
+    // something else
+   }).catch((e) => {
+    console.error(e);
+   });
+   
   const recording = !this.state.recording
   let apiCall = null
   if ( recording ) {
@@ -87,7 +109,41 @@ record=()=>{
         console.log('hi')
         
 
-        this.capture()
+        // this.capture()
+        
+recorder
+.stop()
+.getMp3().then(([buffer, blob]) => {
+ // do what ever you want with buffer and blob
+ // Example: Create a mp3 file and play
+ const file = new File(buffer, 'me-at-thevoice.mp3', {
+   type: blob.type,
+   lastModified: Date.now()
+ });
+
+ const player = new Audio(URL.createObjectURL(file));
+ player.play();
+return file
+})
+// .then((file)=>{
+
+// const body = DeepAffects.Audio.fromFile(file); // {Audio} Audio object
+
+// const callback = function(error, data, response) {
+//  if (error) {
+//    console.error(error);
+//  } else {
+//    console.log('API called successfully. Returned data: ' + JSON.stringify(data));
+//  }
+// };
+// apiInstance.syncRecogniseEmotion(body, callback);
+// })
+// .catch((e) => {
+//  alert('We could not retrieve your message');
+//  console.log(e);
+// });
+       
+
         
         this.setState({recording})
         }, 15000)
@@ -132,7 +188,7 @@ record=()=>{
   <input type="file" name="myfile" onChange={e=>this.handleFileInput(e)} onClick={this.getFirebasetoken} />
   {this.state.thisimage && <img src={this.state.thissrc} alt='This'/>}
   
-  
+  <Dictophone />
   </>)
   }
 }
