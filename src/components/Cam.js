@@ -132,9 +132,12 @@ record=()=>{
    
     
 } else {
+    console.log('localStorage', this.state.apiData)
+    const Data = JSON.stringify(this.state.apiData)
+    console.log(typeof Data)
+    localStorage.setItem('reportData', Data )
     clearInterval(this.state.interval)
     this.setState({recording})
-    console.log(apiCall)
   }
   
  
@@ -153,9 +156,7 @@ record=()=>{
         facingMode: "user"
       };
     return (<>
-      <ApiContext.Provider value={this.state}>
-      
-      </ApiContext.Provider>
+     
     
     
     

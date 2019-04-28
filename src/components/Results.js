@@ -13,11 +13,11 @@ export default class Report extends Component {
       data: [10, 1, 5, 2, 20,],
       }]
   }
-  static contextType = ApiContext
 
   componentDidMount(){
-    
-    console.log('context',this.context)
+    const dataString =localStorage.getItem('reportData')
+    const Data = JSON.parse(dataString)
+    console.log('Data',Data)
   }
     function () {
       ('.min-chart#chart-sales').easyPieChart({
@@ -30,7 +30,7 @@ export default class Report extends Component {
 
 
   render() {
-
+console.log(this.context)
     return (
       <>
         <div className="text-center">
