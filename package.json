@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-motion": "^0.5.2",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
-    "react-transition-group": "^4.0.0"
+    "react-transition-group": "^4.0.0",
+    "reactstrap": "^8.0.0",
+    "vue-audio-visual": "^1.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,5 +34,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielEduardoAshley/speakeasy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielEduardoAshley/speakeasy/issues"
+  },
+  "homepage": "https://github.com/DanielEduardoAshley/speakeasy#readme"
 }

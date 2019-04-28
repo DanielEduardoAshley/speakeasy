@@ -8,6 +8,7 @@ import Record from './containers/record';
 import Dialog from './components/dialog';
 
 
+
 class App extends React.Component {
     constructor(props){
       super(props);
