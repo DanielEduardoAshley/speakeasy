@@ -3,7 +3,9 @@ import * as firebase from 'firebase';
 import axios from 'axios';
 import Webcam from "react-webcam";
 import getUrl from "../services/getUrl";
-import Dictophone from '../audio/audio'
+import Dictophone from '../audio/audio';
+import { HashRouter } from 'react-router-dom';
+import ApiContext from '../contexts/apiContext';
 // const DeepAffects = require('deep-affects');
 
 const MicRecorder = require('mic-recorder-to-mp3');
@@ -153,7 +155,14 @@ record=()=>{
         height: 720,
         facingMode: "user"
       };
-    return (<><div>
+    return (<>
+      <ApiContext.Provider value={this.state}>
+      
+      </ApiContext.Provider>
+    
+    
+    
+    <div>
       {!this.state.recording?<button onClick={this.record}>Record</button>:<button onClick={this.record}>Stop Recording</button>}
     <Webcam
       style={{marginLeft:'100px'}}
