@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Line, Doughnut } from 'react-chartjs-2';
-import ApiContext from '../contexts/apiContext'
+import ApiContext from '../contexts/apiContext';
+import './results.css';
 
 export default class Report extends Component {
 
@@ -32,17 +33,17 @@ export default class Report extends Component {
   render() {
 console.log(this.context)
     return (
-      <>
+      <div className ='background'>
         <div className="text-center">
-          <h1 style={{padding: '50px'}}>Your Report:</h1>
+          <h1 style={{padding: '50px'}}  id= "text">Your Report:</h1>
           <Line data={this.state} />
           <Doughnut data={this.state} />
         </div>
         <div>
-          <h3 style={{padding: '50px'}}>Your Report Explained:</h3>
+          <h3 style={{padding: '50px'}} id= "text">Your Report Explained:</h3>
           <p></p>
         </div>
-      </>
+      </div>
     )
   }
 }
