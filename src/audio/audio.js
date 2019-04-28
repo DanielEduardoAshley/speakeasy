@@ -34,7 +34,9 @@ const analyzeText=(transcript)=>{
       data: `text=${transcript.split(' ').join('+')}`
   })
   .then((response)=>{
-      console.log(response)
+      // console.log(response)
+      localStorage.setItem('voiceData', JSON.stringify(response.data))
+      console.log(localStorage.getItem('voiceData'))
   })
   .catch(err=>{
       console.log(err)
@@ -65,11 +67,16 @@ const analyzeText=(transcript)=>{
 }
 
   return (
-    <div>
-      <button onClick={resetTranscript}>Reset</button>
-      <button onClick={e=>analyzeText(transcript)}>Analyze Text</button>
-      <span style={{fontSize: '20px'}}>{transcript}</span>
+    <>
+    <div className='row' style={{paddingTop: 10}}>
+    <div className='col col-5'><button onClick={resetTranscript} className="btn btn-primary" style={{width:'60%'}}>Reset</button></div>
+    <div className='col col-5'> <button onClick={e=>analyzeText(transcript)} className="btn btn-primary" style={{width:'60%'}}>Analyze Text</button></div>
+      
     </div>
+    <div className='row' style={{paddingBottom:5}}>
+    <div style={{fontSize: '20px'}}>{transcript}</div>
+    </div>
+    </>
   );
 };
 
