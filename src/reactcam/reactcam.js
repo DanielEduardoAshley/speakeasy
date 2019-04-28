@@ -51,6 +51,7 @@ class Cam extends React.Component {
         recording: false,
         interval:0,
         apiData: [],
+        startTime: 0
     }
 
     setRef = webcam => {
@@ -58,6 +59,8 @@ class Cam extends React.Component {
       };
      
       capture =async () => {
+        let snapTime = Date.now() - this.state.startTime
+        console.log(snapTime)
         const imageSrc = this.webcam.getScreenshot();
         const image = new Image(100,200)
         image.src = imageSrc;
@@ -95,13 +98,11 @@ class Cam extends React.Component {
 
     
 
-record=()=>{
-  recorder.start().then(() => {
-    // something else
-   }).catch((e) => {
-    console.error(e);
-   });
-   
+record=()=>{  
+  const startTime = Date.now()
+  this.setState({
+    startTime 
+  })
   const recording = !this.state.recording
   let apiCall = null
   if ( recording ) {
@@ -109,42 +110,12 @@ record=()=>{
         console.log('hi')
         
 
-        // this.capture()
+        this.capture()
         
-recorder
-.stop()
-.getMp3().then(([buffer, blob]) => {
- // do what ever you want with buffer and blob
- // Example: Create a mp3 file and play
- const file = new File(buffer, 'me-at-thevoice.mp3', {
-   type: blob.type,
-   lastModified: Date.now()
- });
 
- const player = new Audio(URL.createObjectURL(file));
- player.play();
-return file
-})
-// .then((file)=>{
-
-// const body = DeepAffects.Audio.fromFile(file); // {Audio} Audio object
-
-// const callback = function(error, data, response) {
-//  if (error) {
-//    console.error(error);
-//  } else {
-//    console.log('API called successfully. Returned data: ' + JSON.stringify(data));
-//  }
-// };
-// apiInstance.syncRecogniseEmotion(body, callback);
-// })
-// .catch((e) => {
-//  alert('We could not retrieve your message');
-//  console.log(e);
-// });
        
 
-        
+        const snapTime = Date.now()
         this.setState({recording})
         }, 15000)
       })
