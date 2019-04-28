@@ -1,19 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Cam from './reactcam/reactcam';
+import React, { Component } from 'react';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 
-class App extends React.Component{
-  render(){
-     return (
-     <>
-     <div>
-      Hello World
-     </div>
-     </>)
-  } 
-   
+//components
+import Home from './containers/Home';
+import Nav from './components/Nav';
+import Cam from './components/Cam';
+import Results from './components/Results';
 
+
+export default class App extends Component {
+
+
+  render() {
+    return (
+      <HashRouter>
+        <Route path='/' component={Nav} />
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/record' exact component={Cam} />
+            <Route path='/results' exact component={Results} />
+          </Switch>
+      </HashRouter>
+    )
+  }
 }
-
-export default App;
