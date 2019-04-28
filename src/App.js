@@ -1,13 +1,19 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Cam from './reactcam/reactcam';
 
-function App() {
-  return (
-    <div>
+class App extends React.Component{
+  render(){
+     return (
+     <>
+     <div>
       Hello World
-    </div>
-  );
+     </div>
+     </>)
+  } 
+   
+
 }
 
 export default App;
