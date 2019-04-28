@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 class Info extends React.Component {
     constructor(props) {
         super(props);
@@ -12,9 +11,16 @@ class Info extends React.Component {
         return (
             <>
                 <h1> How does facial recognition work? </h1>
+
                 <div className="container">
-                    <img style={{ width: '300%', height: '300%' }} src={require('../assets/Howitworks.jpg')} className="img-fluid" alt="" />
-                </div>
+                    <img style={{ width: '100%', height: '100%' }} src={require('../assets/Howitworks.jpg')} className="img-fluid" alt="" />
+                    <div className="overlay">
+                        <div onClick className="background">
+                            <Link className="text" style={{ textDecoration: 'none' }} to='/results'> Analytics </Link>
+                        </div>
+                         </div>
+                         </div>
+
                 <p>
                     Facial recognition is a way of recognizing a human face through technology.
                     Our facial recognition system uses biometrics to map facial features from a photograph or video.

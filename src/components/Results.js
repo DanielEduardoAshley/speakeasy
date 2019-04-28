@@ -28,12 +28,12 @@ export default class Report extends Component {
     return (
       <>
         <div className="text-center">
-          <h1 style={{padding: '50px'}}>Your Report:</h1>
+          <h1 style={{padding: '50px'}}> Data Report</h1>
           <Line data={this.state} />
           <Doughnut data={this.state} />
         </div>
         <div>
-          <h3 style={{padding: '50px'}}>Your Report Explained:</h3>
+          <h3 style={{padding: '50px'}}> Your Report Explained:</h3>
           <p></p>
         </div>
       </>

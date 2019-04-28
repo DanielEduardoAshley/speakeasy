@@ -4,7 +4,6 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Home from './containers/home';
 import Info from './components/info';
-// import Record from './containers/record';
 import Cam from './components/Cam';
 import Results from './components/Results';
 
@@ -36,5 +35,3 @@ class App extends React.Component {
     };
 }
 export default App;
-
-//components
