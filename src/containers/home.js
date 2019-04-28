@@ -22,7 +22,6 @@ class Home extends React.Component {
                         <div className="container">
                             <h1 className="display-4"> Facial Recognition </h1>
                             <h1 className="display-5"> Practice your public speaking </h1>
-                            <input className="search" type="text" placeholder="Search" aria-label="Search"></input>
                         </div>
                     </div>
                 </div>
