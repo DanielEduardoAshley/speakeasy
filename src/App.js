@@ -1,26 +1,40 @@
-import React, { Component } from 'react';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import React from 'react';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
-//components
-import Home from './containers/Home';
-import Nav from './components/Nav';
+import Navbar from './components/navbar';
+import Home from './containers/home';
+import Info from './components/info';
+// import Record from './containers/record';
 import Cam from './components/Cam';
 import Results from './components/Results';
 
 
-export default class App extends Component {
 
 
-  render() {
-    return (
-      <HashRouter>
-        <Route path='/' component={Nav} />
-          <Switch>
-            <Route path='/' exact component={Home} />
+class App extends React.Component {
+    constructor(props){
+      super(props);
+
+    }
+
+
+
+    render() {
+      return(
+      <HashRouter> 
+        <Route path='/*' component= {Navbar}/>
+        <Switch>
+
+        <Route path='/' exact component= {Home} />
+        <Route path='/info' exact component= {Info}/> 
             <Route path='/record' exact component={Cam} />
             <Route path='/results' exact component={Results} />
-          </Switch>
-      </HashRouter>
-    )
-  }
+
+        </Switch>
+       </HashRouter> 
+      );
+    };
 }
+export default App;
+
+//components
